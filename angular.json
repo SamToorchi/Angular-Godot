@@ -25,12 +25,19 @@
             "aot": false,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/test.pck",
+              "src/test.wasm",
+              "src/test.png.import"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "unity/style.css"
             ],
-            "scripts": []
+            "scripts": [
+              "unity/test.js",
+              "unity/index.js"
+            ]
           },
           "configurations": {
             "production": {
