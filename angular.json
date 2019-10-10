@@ -28,11 +28,13 @@
               "src/assets",
               "src/test.pck",
               "src/test.wasm",
-              "src/test.png.import"
+              "src/test.png.import",
+              "src/database.pck",
+              "src/database.wasm",
+              "src/database.png.import"
             ],
             "styles": [
-              "src/styles.scss",
-              "unity/style.css"
+              "src/styles.scss"
             ],
             "scripts": [
               "unity/test.js",
