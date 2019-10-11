@@ -1,6 +1,9 @@
 import { Component, OnInit  } from '@angular/core';
 import { NgxIndexedDB } from 'ngx-indexed-db';
+import { interval, Subscription } from 'rxjs';
+
 declare const initGodot: any;
+let subscription: Subscription;
 
 @Component({
   selector: 'app-database',
@@ -44,9 +47,6 @@ export class DatabaseComponent  implements OnInit{
         );
     });
     */
-          var uint8array = new TextEncoder().encode("¢");
-          const buffer = new TextDecoder().decode(uint8array);
-          console.log(buffer);
           let db = new NgxIndexedDB('/userfs');
           db.openDatabase(21, evt => {
             /* Do something */
@@ -54,16 +54,15 @@ export class DatabaseComponent  implements OnInit{
           }).then(function(){
             db.getAll('FILE_DATA').then(
                 FILE_DATA => {
-                    let aha = new TextDecoder().decode(FILE_DATA[1].contents)
-                    console.log(aha);
+                    let levelSpec = new TextDecoder().decode(FILE_DATA[1].contents)
+                    console.log(levelSpec);
+                    this.subscription = interval(3000).subscribe(val => console.log(levelSpec));
                 },
                 error => {
                     console.log(error);
                 });
               });
 
-
-
-
       }
+
 }
